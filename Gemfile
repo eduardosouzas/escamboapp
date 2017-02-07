@@ -23,6 +23,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+# Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
+gem 'enum_help'
+
 gem 'faker'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

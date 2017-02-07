@@ -1,7 +1,7 @@
 class Backoffice::AdminsController < BackofficeController
 before_action :set_admin, only: [:edit, :update, :destroy]
   def index
-    @admins = Admin.order(:email)
+    @admins = Admin.with_full_access
   end
 
   def new
