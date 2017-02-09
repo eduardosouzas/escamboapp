@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :backoffice do
     resources :categories, except: [:show, :destroy]
     resources :admins, except: [:show]
+    resources :send_mail,  only: [:edit, :create]
     get 'dashboard', to: 'dashboard#index' # alias para dashboard na ação index do dashboard
   end
 
