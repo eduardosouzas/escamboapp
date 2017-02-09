@@ -66,6 +66,8 @@ group :development do
   gem 'spring'
   #Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd/
   gem 'rails-erd'
+  # Catches mail and serves it through a dream.
+  gem 'mailcatcher'
 
   gem 'pry-rails'
 end
