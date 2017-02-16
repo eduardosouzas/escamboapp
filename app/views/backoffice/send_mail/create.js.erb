@@ -1,0 +1,6 @@
+$(function(){
+    var  modal = $('#sendEmailModal');
+    modal.modal('hide');
+    $('#myForm').trigger("reset");
+    $.notify('<%= @notify_message %>','<%= @notify_flag %>');
+});

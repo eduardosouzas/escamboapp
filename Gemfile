@@ -25,6 +25,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Gerador de Lero-Lero.
+gem 'lerolero_generator'
 # Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
