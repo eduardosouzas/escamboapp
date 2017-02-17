@@ -12,6 +12,9 @@ gem 'devise-i18n'
 # Manage Procfile-based applications
 gem 'foreman'
 
+# Easy file attachment management for ActiveRecord
+gem 'paperclip', '~> 5.0.0'
+
 gem 'rails-i18n'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -22,6 +25,8 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 
+# Integration of RubyMoney - Money with Rails
+gem 'money-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

@@ -11,6 +11,19 @@ namespace :utils do
     end
     puts "administradores fakers criados com sucesso!!"
   end
+  #########################################################################
+    desc "Criar members fake"
+    task generate_members: :environment do
+      puts "Criando members fakers"
+      100.times do
+          Member.create!(email: Faker::Internet.email,
+                         password:"123456",
+                         password_confirmation:"123456"
+                       )
+      end
+      puts "Member fakers criados com sucesso!!"
+    end
+  #########################################################################
   desc "Cria Anúncios Fake"
     task generate_ads: :environment do
       puts "Cadastrando ANÚNCIOS..."
@@ -22,9 +35,9 @@ namespace :utils do
           #description_short: Faker::Lorem.sentence([2,3].sample),
           member: Member.first,
           category: Category.all.sample,
-          #price: "#{Random.rand(500)},#{Random.rand(99)}",
+          price: "#{Random.rand(500)},#{Random.rand(99)}",
           #finish_date: Date.today + Random.rand(90),
-         #picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
+          picture:File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
         )
       end
 
