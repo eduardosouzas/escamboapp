@@ -37,3 +37,14 @@ categories.each do |category|
 end
 
 puts "CATEGORIAS cadastradas com sucesso!"
+
+##################################################################
+puts "Cadastrando membro padrão"
+
+Member.create!(
+     # name:"Edu Souza",
+     email:"member@member.com",
+     password:"123456",
+     password_confirmation:"123456")
+
+puts "fim do cadastro de membro padrao com sucesso!"
