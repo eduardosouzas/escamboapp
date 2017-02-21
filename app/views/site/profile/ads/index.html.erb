@@ -1,33 +1,31 @@
-<h1>Meus Anúncios</h1>
-<div class="panel panel-default">
-    <div class="panel-heading">
-        Anúncios
-    </div>
-    <!-- /.panel-heading -->
-    <div class="panel-body">
-        <div class="table-responsive">
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Picture</th>
-                        <th>title</th>
-                        <th>price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <% @ads.each do |ad| %>
-                    <tr>
-                        <td><%= ad.id %></td>
-                        <td><%= image_tag ad.picture(:thumb) %></td>
-                        <td><%= ad.title %></td>
-                        <td><%= humanized_money_with_symbol ad.price %></td>
-                    </tr>
-                 <% end %>
-                </tbody>
-            </table>
-        </div>
-        <!-- /.table-responsive -->
-    </div>
-    <!-- /.panel-body -->
+<h1>Listando anúncios</h1>
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Picture</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @ads.each do |ad| %>
+            <tr>
+                <td><%= ad.id %></td>
+                <td><%= image_tag ad.picture(:thumb) %></td>
+                <td><%= ad.title %></td>
+                <td><%= ad.category.description %></td>
+                <td><%= humanized_money_with_symbol ad.price %></td>
+                <td>
+                <%= link_to edit_site_profile_ad_path(ad) , class: "btn btn-primary btn-circle" do %>
+                    <i class="glyphicon glyphicon-pencil"></i>
+                <% end %>
+                </td>
+            </tr>
+         <% end %>
+        </tbody>
+    </table>
 </div>

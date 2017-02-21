@@ -1,5 +1,13 @@
 class Site::Profile::AdsController < Site::ProfileController
     def index
-        @ads = Ad.where(member: current_member)
+        @ads = Ad.to_the(current_member)
+    end
+
+    def edit
+
+    end
+
+    def update
+
     end
 end
