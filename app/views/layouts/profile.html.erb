@@ -16,9 +16,6 @@
       <%= stylesheet_link_tag    'site', media: 'all'  %>
       <%= stylesheet_link_tag    'site/profile', media: 'all'  %>
 
-      <%= javascript_include_tag 'application'  %>
-      <%= javascript_include_tag 'site' %>
-
       <%= csrf_meta_tags %>
 
 
@@ -49,6 +46,10 @@
                 <li>
                     <%= link_to "Meus anúncios", site_profile_ads_path %>
                 </li>
+                <li>
+                    <%= link_to "Novo anúncio",  new_site_profile_ad_path  %>
+                </li>
+
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -68,6 +69,21 @@
     </div>
     <!-- /#wrapper -->
 
+<% if notice %>
+      <%= javascript_tag "$.notify('#{notice}', 'success');" %>
+<% end %>
+<% if alert %>
+      <%= javascript_tag  "$.notify('#{alert}', 'error');" %>
+<% end %>
+
+  <%= javascript_include_tag 'application'  %>
+  <%= javascript_include_tag 'site' %>
+  <%= javascript_include_tag 'site/profile' %>
+<script type="text/javascript" >
+$(function() {
+    $('.datepicker').datepicker();
+});
+</script>
 
 </body>
 

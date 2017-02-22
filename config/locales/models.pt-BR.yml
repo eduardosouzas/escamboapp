@@ -39,6 +39,7 @@
         id: Código
         created_at: Criado em
         updated_at: Atualizado em
+        finish_date: Data de finalização
         title: Título
         description: Descrição
         member_id: Código do Usuário

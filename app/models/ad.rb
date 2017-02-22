@@ -1,8 +1,13 @@
 class Ad < ActiveRecord::Base
   belongs_to :category
   belongs_to :member
-  # gem imagemagick / paperclip
+  self.per_page = 5
 
+  # validates
+  validates :title, :description, :category, :picture, :finish_date, presence: true
+  validates :price, numericality: {greater_than: 0 }
+
+  # gem imagemagick / paperclip
   scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) }
   scope :to_the, ->(member){where(member: member)}
 
