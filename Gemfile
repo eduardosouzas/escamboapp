@@ -52,7 +52,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 source 'https://rails-assets.org'  do
   gem 'rails-assets-bootstrap', '3.3.7'
-  gem 'rails-assets-notifyjs'
+  # bootstrap notify
+  gem 'rails-assets-bootstrap.growl'
+  # animated css for bootstrap notify
+  gem 'rails-assets-animate-css'
   gem 'rails-assets-bootbox'
 end
 # Use ActiveModel has_secure_password

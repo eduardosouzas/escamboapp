@@ -69,16 +69,12 @@
     </div>
     <!-- /#wrapper -->
 
-<% if notice %>
-      <%= javascript_tag "$.notify('#{notice}', 'success');" %>
-<% end %>
-<% if alert %>
-      <%= javascript_tag  "$.notify('#{alert}', 'error');" %>
-<% end %>
-
   <%= javascript_include_tag 'application'  %>
   <%= javascript_include_tag 'site' %>
   <%= javascript_include_tag 'site/profile' %>
+
+<%= render partial: 'layouts/shared/notifications' %>
+
 <script type="text/javascript" >
 $(function() {
     $('.datepicker').datepicker();
