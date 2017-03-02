@@ -35,14 +35,12 @@ gem 'money-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Gerador de Lero-Lero.
-gem 'lerolero_generator'
+# The safe Markdown parser, reloaded.
+gem 'redcarpet'
 # Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
 gem 'enum_help'
-
-gem 'faker'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -85,5 +83,11 @@ group :development do
   gem 'mailcatcher'
 
   gem 'pry-rails'
+  # Markdown Lorem Ipsum generator
+  gem 'doctor_ipsum'
+  # Gerador de Lero-Lero.
+  gem 'lerolero_generator'
+
+  gem 'faker'
 end
 

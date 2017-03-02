@@ -47,23 +47,10 @@ namespace :dev do
     task generate_ads: :environment do
       puts "Cadastrando ANÚNCIOS..."
 
-      5.times do
-        Ad.create!(
-          title: Faker::Lorem.sentence([2,3,4,5].sample),
-          description: LeroleroGenerator.paragraph(Random.rand(1..3)),
-          #description_short: Faker::Lorem.sentence([2,3].sample),
-          member: Member.first,
-          category: Category.all.sample,
-          price: "#{Random.rand(500)},#{Random.rand(99)}",
-          finish_date: Date.today + Random.rand(90),
-          picture:File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
-        )
-      end
-
       100.times do
         Ad.create!(
           title: Faker::Lorem.sentence([2,3,4,5].sample),
-          description: LeroleroGenerator.paragraph(Random.rand(1..3)),
+          description: markdown_faker, #LeroleroGenerator.paragraph(Random.rand(1..3)),
           #description_short: Faker::Lorem.sentence([2,3].sample),
           member: Member.all.sample,
           category: Category.all.sample,
@@ -73,19 +60,23 @@ namespace :dev do
         )
       end
 
-     #  100.times do
-     #   Ad.create!(
-     #     title: Faker::Lorem.sentence([2,3,4,5].sample),
-     #     description_md: markdown_fake,
-     #     description_short: Faker::Lorem.sentence([2,3].sample),
-     #     member: Member.all.sample,
-     #     category: Category.all.sample,
-     #     price: "#{Random.rand(500)},#{Random.rand(99)}",
-     #     finish_date: Date.today + Random.rand(90),
-     #     picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
-     #   )
-     # end
+      5.times do
+        Ad.create!(
+          title: Faker::Lorem.sentence([2,3,4,5].sample),
+          description: markdown_faker,  #LeroleroGenerator.paragraph(Random.rand(1..3)),
+          #description_short: Faker::Lorem.sentence([2,3].sample),
+          member: Member.first,
+          category: Category.all.sample,
+          price: "#{Random.rand(500)},#{Random.rand(99)}",
+          finish_date: Date.today + Random.rand(90),
+          picture:File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
+        )
+      end
 
       puts "ANÚNCIOS cadastrados com sucesso!"
+  end
+
+  def markdown_faker
+    %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry")
   end
 end
