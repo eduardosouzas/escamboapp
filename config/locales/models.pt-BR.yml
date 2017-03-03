@@ -42,6 +42,8 @@
         finish_date: Data de finalização
         title: Título
         description: Descrição
+        description_md: Descrição em MarkDown
+        description_short: Breve Descrição
         member_id: Código do Usuário
         category_id: Código da Categoria
 

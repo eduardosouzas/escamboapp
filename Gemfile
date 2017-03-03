@@ -20,6 +20,9 @@ gem 'rails-i18n'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord. It allows you
+#to create pretty URL’s and work with human-friendly strings as if they were numeric ids for ActiveRecord models.
+gem 'friendly_id', '~> 5.1.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -55,6 +58,8 @@ source 'https://rails-assets.org'  do
   # animated css for bootstrap notify
   gem 'rails-assets-animate-css'
   gem 'rails-assets-bootbox'
+  gem 'rails-assets-bootstrap-markdown'
+  gem 'rails-assets-marked'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
