@@ -1,7 +1,7 @@
 //= require bootstrap
 //= require bootstrap-markdown
 //= require marked
-
+//= require wiselinks
 /**
  * Brazilian Portuguese translation for bootstrap-markdown
  * Gabriel Anderson <gcacars@>
@@ -32,6 +32,7 @@
         'Code': "Código",
         'code text here': "Escreva o código aqui"
       };
+      window.wiselinks = new Wiselinks($("#home-detail"));
     }(jQuery));
 
     $("#ad_description_md").markdown({language:'ptBR'});

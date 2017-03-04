@@ -253,6 +253,7 @@ GEM
     will_paginate (3.1.5)
     will_paginate-bootstrap (1.0.1)
       will_paginate (>= 3.0.3)
+    wiselinks (1.2.1)
 
 PLATFORMS
   ruby
@@ -296,6 +297,7 @@ DEPENDENCIES
   web-console (~> 2.0)
   will_paginate (~> 3.1.0)
   will_paginate-bootstrap
+  wiselinks
 
 BUNDLED WITH
    1.14.3

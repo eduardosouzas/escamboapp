@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap.growl
 
+
 $(document).ready(function() {
 
   // Global ajax cursor change
