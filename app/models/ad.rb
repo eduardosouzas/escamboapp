@@ -1,19 +1,26 @@
 class Ad < ActiveRecord::Base
+
+  QT_FOR_PAGE = 6
   #callbackas
   before_save :md_to_html
 
   # associations
   belongs_to :category, counter_cache: true
   belongs_to :member
-  self.per_page = 5
+  has_many :comments
 
   # validates
   validates :title, :description_short,:description_md , :category, :picture, :finish_date, presence: true
   validates :price, numericality: {greater_than: 0 }
 
   # gem imagemagick / paperclip
-  scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) }
+  scope :descending_order, ->(page){
+        order(created_at: :desc).page(page).per(QT_FOR_PAGE) }
+  scope :search, ->(term, page = 1){
+        where("title LIKE ? ","%#{term}%" ).page(page).per(QT_FOR_PAGE)}
+
   scope :to_the, ->(member){where(member: member)}
+
 
   has_attached_file :picture, styles: { medium: "320x150#", thumb: "100x100>", large: "800x300#" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/

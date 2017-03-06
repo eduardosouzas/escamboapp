@@ -21,3 +21,15 @@
         </div>
     </div>
 <% end %>
+<div class="row">
+    <div class="text-center">
+            <%= paginate  @ads %>
+    </div>
+</div>
+
+
+<% if @ads.blank? %>
+ <div class="well well-sm">
+        <span>Não foi encontrado nenhum categoria com o termo <%= params[:q] %></span>
+  </div>
+<% end %>

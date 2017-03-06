@@ -30,9 +30,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
 # pagination for rails
-gem 'will_paginate', '~> 3.1.0'
+gem 'kaminari'
 # integration of will_paginate with bootstrap
-gem 'will_paginate-bootstrap'
+gem 'kaminari-i18n'
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes

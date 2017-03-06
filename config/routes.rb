@@ -8,17 +8,21 @@ Rails.application.routes.draw do
     resources :categories, except: [:show, :destroy]
     resources :admins, except: [:show]
     resources :send_mail,  only: [:edit, :create]
+    resources :diagrams, only: [:index]
     get 'dashboard', to: 'dashboard#index' # alias para dashboard na ação index do dashboard
+
   end
 
   namespace :site do
     get  'home', to: 'home#index'
+    get  'search', to: 'search#ads'
     namespace :profile do
       resources :dashboard, only: [:index]
       resources :ads, only: [:index, :edit, :update, :new, :create]
     end
     resources :ad_detail, only: [:show]
     resources :categories, only: [:show]
+    resources :comments, only: [:create]
   end
 
   devise_for :admins, :skip => [:registrations]
