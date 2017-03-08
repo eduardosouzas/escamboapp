@@ -1,6 +1,9 @@
 class Ad < ActiveRecord::Base
 
+  # Constants
   QT_FOR_PAGE = 6
+  # gem RatyRate - avaliacao com estrelas
+  ratyrate_rateable 'quality'
   #callbackas
   before_save :md_to_html
 
@@ -19,7 +22,7 @@ class Ad < ActiveRecord::Base
   scope :search, ->(term, page = 1){
         where("title LIKE ? ","%#{term}%" ).page(page).per(QT_FOR_PAGE)}
 
-  scope :to_the, ->(member){where(member: member)}
+  scope :to_the, ->(member,page){where(member: member).page(page).per(QT_FOR_PAGE)}
 
 
   has_attached_file :picture, styles: { medium: "320x150#", thumb: "100x100>", large: "800x300#" }, default_url: "/images/:style/missing.png"

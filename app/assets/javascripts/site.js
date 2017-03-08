@@ -2,6 +2,9 @@
 //= require bootstrap-markdown
 //= require marked
 //= require wiselinks
+//= require jquery.raty
+//= require ratyrate
+
 /**
  * Brazilian Portuguese translation for bootstrap-markdown
  * Gabriel Anderson <gcacars@>

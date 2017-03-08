@@ -2,7 +2,7 @@ class Site::Profile::AdsController < Site::ProfileController
  before_action :set_ad, only: [:edit, :update]
  #before_action :params_ad, only: [:update]
     def index
-        @ads = Ad.to_the(current_member)  #.paginate(:page => params[:page])
+        @ads = Ad.to_the(current_member,params[:page])  #.paginate(:page => params[:page])
     end
 
     def new

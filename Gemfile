@@ -15,6 +15,9 @@ gem 'foreman'
 # Easy file attachment management for ActiveRecord
 gem 'paperclip', '~> 5.0.0'
 
+# A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+gem 'ratyrate'
+
 gem 'rails-i18n'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

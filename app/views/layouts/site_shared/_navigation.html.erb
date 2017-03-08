@@ -16,14 +16,14 @@
             <ul class="nav navbar-nav pull-right">
                 <% if member_signed_in? %>
                      <li>
-                                <span class="navbar-brand"><%= current_member.email %></span>
+                                <span class="navbar-brand"><%= current_member.profile_member.first_name %></span>
                      </li>
                      <li>
                         <%= link_to "Perfil", site_profile_dashboard_index_path %>
                     </li>
 
                      <li>
-                        <%= link_to "Logout", destroy_member_session_path, method: :delete %>
+                        <%= link_to "Sair", destroy_member_session_path, method: :delete %>
                     </li>
                 <% else %>
                     <li>
