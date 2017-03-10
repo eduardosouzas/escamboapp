@@ -42,9 +42,9 @@
                     <div class="form-group">
                       <div class="col-md-12 control">
                             <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                              Don't have an account!
+                              Não tem uma conta
                           <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                              Sign Up Here
+                              Cadastra-se aqui
                           </a>
                           </div>
                       </div>
@@ -63,7 +63,6 @@
             <div class="panel-body" >
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
                   html:{class:"form-horizontal",role:"form"}) do |f| %>
-                  <%= devise_error_messages! %>
                     <div class="form-group">
                         <%= f.label :email,  class:"col-md-3 control-label"%>
                         <div class="col-md-9">
@@ -108,7 +107,7 @@
                         <!-- Button -->
                         <div class="col-md-offset-3 col-md-9">
                             <%= f.submit  class:"btn btn-info" do %>
-                            <i class="icon-hand-right"></i>&nbsp Sign up
+                            <i class="icon-hand-right"></i>Cadastrar
                             <% end %>
                         </div>
                     </div>
@@ -123,8 +122,16 @@
     </div>
  </div>
 
-<script type="text/javascript">
   <% flash.each do  |key, value|   %>
-          $.notify("<%= value %>", "info");
+      <%= javascript_tag "$.notify( { message: '#{value}'}, { type: 'danger',
+          placement: { from: 'top', align: 'center' }});" %>
   <%  end %>
-</script>
+
+<% resource.errors.full_messages.each do |message| %>
+  <%=  javascript_tag "$.notify( { message: '#{message}'}, { type: 'danger',
+  placement: { from: 'top', align: 'center' }});" %>
+<% end %>
+
+<% resource.errors.full_messages.each do |message| %>
+  <%=  message %>
+<% end %>

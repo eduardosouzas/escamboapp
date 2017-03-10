@@ -4,7 +4,7 @@ module ApplicationHelper
     end
 
     def devise_sign_in?
-        params[:controller] == 'members/sessions' ? ''  : 'display:none;'
+        params[:controller] == 'members/sessions' ? '' : 'display:none;'
     end
 
     def devise_sign_up?
