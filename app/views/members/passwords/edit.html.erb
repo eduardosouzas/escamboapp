@@ -1,25 +1,24 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+<div class="container">
+  <div class="row">
+  <div class="col-sm-12">
+  <h1>Mudança de senha</h1>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "members/shared/links" %>
+  <div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+  <p class="text-center">Use o formulário abaixo para alterar sua senha. Sua senha não pode ser igual a seu nome de usuário.</p>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.hidden_field :reset_password_token %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+      <% end %>
+      <%= f.password_field :password, autofocus: true, autocomplete: "off" ,class:"input-lg form-control",
+      placeholder:"Nova senha" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" , class:"input-lg form-control",
+  placeholder:"Repita a senha" %>
+   <%= f.submit "Mudar minha senha" , class:"col-xs-12 btn btn-primary btn-load btn-lg" %>
+  <% end %>
+  </div><!--/col-sm-6-->
+  </div><!--/row-->
+</div>
