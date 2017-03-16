@@ -24,6 +24,8 @@ class Ad < ActiveRecord::Base
 
   scope :to_the, ->(member,page){where(member: member).page(page).per(QT_FOR_PAGE)}
 
+  scope :random,-> (qtt = 3) {limit(qtt).order("RANDOM()")}
+
 
   has_attached_file :picture, styles: { medium: "320x150#", thumb: "100x100>", large: "800x300#" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
