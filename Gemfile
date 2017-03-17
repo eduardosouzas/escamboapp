@@ -97,7 +97,13 @@ group :development do
   gem 'doctor_ipsum'
   # Gerador de Lero-Lero.
   gem 'lerolero_generator'
-
   gem 'faker'
+  gem 'capistrano', '~> 3.7'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-rvm'
 end
 
+group :production do
+  gem 'mysql2', '~> 0.3.18'
+end

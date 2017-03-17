@@ -16,3 +16,6 @@
 !/log/.keep
 /tmp
 /public/system
+
+# Archive for config database
+/config/database.yml
