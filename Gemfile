@@ -56,6 +56,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # If Turbolinks are not enough for you. Wiselinks makes your application work faster.
 gem 'wiselinks'
 
+  # Markdown Lorem Ipsum generator
+gem 'doctor_ipsum'
+# Gerador de Lero-Lero.
+gem 'lerolero_generator'
+gem 'faker'
+
 source 'https://rails-assets.org'  do
   gem 'rails-assets-bootstrap', '3.3.7'
   # bootstrap notify
@@ -93,11 +99,7 @@ group :development do
   gem 'mailcatcher'
 
   gem 'pry-rails'
-  # Markdown Lorem Ipsum generator
-  gem 'doctor_ipsum'
-  # Gerador de Lero-Lero.
-  gem 'lerolero_generator'
-  gem 'faker'
+
   gem 'capistrano', '~> 3.7'
   gem 'capistrano-bundler', '~> 1.2'
   gem 'capistrano-rails', '~> 1.2'

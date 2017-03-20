@@ -6,7 +6,11 @@ namespace :dev do
    puts "Executar setup para desenvolvimento"
 
    puts "Apagando banco de dados #{%x(rake db:drop)}"
-   puts "Apagando images de public #{%x(rm -rf #{images_path})}"
+
+   if Rails.env.development?
+      puts "Apagando images de public #{%x(rm -rf #{images_path})}"
+   end
+
    puts "Criando banco de dados #{%x(rake db:create)}"
    puts %x(rake db:migrate)
    puts %x(rake db:seed)
