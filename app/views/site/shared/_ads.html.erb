@@ -10,7 +10,7 @@
             </div>
             <div class="ratings">
                 <p class="pull-right"><%= "#{ad.rates('quality').count} #{t('labels.reviews')}" %></p>
-                <p><%= rating_for ad, 'quality' %></p>
+                <p><%= rating_for ad, 'quality' , star_path: '/images/ratyrate' %></p>
             </div>
         </div>
     </div>
