@@ -28,7 +28,7 @@ class Ad < ActiveRecord::Base
     if Rails.env.development?
         limit(qtt).order("RANDOM()")
     else
-        limit(qtt).order("RAN()")
+        limit(qtt).order("RAND()")
     end
   }
 
