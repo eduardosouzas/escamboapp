@@ -1,6 +1,6 @@
 # Load DSL and set up stages
 require "capistrano/setup"
-
+require 'capistrano3/unicorn'
 # Include default deployment tasks
 require "capistrano/deploy"
 
